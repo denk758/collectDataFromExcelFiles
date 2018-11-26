@@ -180,9 +180,9 @@ namespace readExcelData
                 //setting up mail
                 MailMessage mail = new MailMessage();
                 //sender mail
-                mail.From = new MailAddress("testdenk@gmx.at");
+                mail.From = new MailAddress("senderMail");
                 //receiver mail
-                mail.To.Add("fabian-denk@gmx.at");
+                mail.To.Add("receiverMail");
 
                 //Setting up smtp client with gmx settings
                 SmtpClient client = new SmtpClient();
@@ -197,7 +197,7 @@ namespace readExcelData
                 //enabling ssl secure connection, important for most hosts
                 client.EnableSsl = true;
                 //setting email and password from sender email
-                client.Credentials = new NetworkCredential("testdenk@gmx.at", "Denk)71)test");
+                client.Credentials = new NetworkCredential("senderMail", "senderPassword");
 
                 //send mail
                 client.Send(mail);
